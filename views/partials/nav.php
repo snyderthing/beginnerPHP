@@ -11,9 +11,9 @@
 
               <a href="/" <?= urlIs('/') ? 'aria-current="page" class="rounded-md bg-gray-950/50 px-3 py-2 text-sm font-medium text-white"' : 'class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white"' ?> >Home</a>
 
-              <a href="/about.php" <?= urlIs('/about.php') ? 'aria-current="page" class="rounded-md bg-gray-950/50 px-3 py-2 text-sm font-medium text-white"' : 'class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white"' ?> >About</a>
+              <a href="/about" <?= urlIs('/about') ? 'aria-current="page" class="rounded-md bg-gray-950/50 px-3 py-2 text-sm font-medium text-white"' : 'class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white"' ?> >About</a>
 
-              <a href="/contact.php" <?= urlIs('/contact.php') ? 'aria-current="page" class="rounded-md bg-gray-950/50 px-3 py-2 text-sm font-medium text-white"' : 'class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white"' ?> >Contact</a>
+              <a href="/contact" <?= urlIs('/contact') ? 'aria-current="page" class="rounded-md bg-gray-950/50 px-3 py-2 text-sm font-medium text-white"' : 'class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white"' ?> >Contact</a>
 
             </div>
           </div>
@@ -64,8 +64,8 @@
       <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
         <!-- Current: "bg-gray-950/50 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
         <a href="/" <?= urlIs('/') ? 'aria-current="page" class="block rounded-md bg-gray-950/50 px-3 py-2 text-base font-medium text-white"' : 'class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white"' ?> >Home</a>
-        <a href="/about.php" <?= urlIs('/about.php') ? 'aria-current="page" class="block rounded-md bg-gray-950/50 px-3 py-2 text-base font-medium text-white"' : 'class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white"' ?> >About</a>
-        <a href="/contact.php" <?= urlIs('/contact.php') ? 'aria-current="page" class="block rounded-md bg-gray-950/50 px-3 py-2 text-base font-medium text-white"' : 'class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white"' ?> >Contact</a>
+        <a href="/about" <?= urlIs('/about') ? 'aria-current="page" class="block rounded-md bg-gray-950/50 px-3 py-2 text-base font-medium text-white"' : 'class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white"' ?> >About</a>
+        <a href="/contact" <?= urlIs('/contact') ? 'aria-current="page" class="block rounded-md bg-gray-950/50 px-3 py-2 text-base font-medium text-white"' : 'class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white"' ?> >Contact</a>
       </div>
       <div class="border-t border-white/10 pb-3 pt-4">
         <div class="flex items-center px-5">
