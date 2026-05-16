@@ -4,6 +4,7 @@ require 'functions.php';
 require 'Database.php';
 require 'router.php';
 
+$config = require('config.php');
 
 
 // $id = $_GET['id'];
