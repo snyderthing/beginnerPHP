@@ -1,3 +1,5 @@
+<?php /** @var array $note */ ?>
+
 <?php require 'partials/head.php' ?>
 <?php require 'partials/nav.php' ?>
 <?php require 'partials/banner.php' ?>
@@ -10,7 +12,7 @@
     </p>
 
 
-    <p><?= $note['body'] ?></p>
+    <p><?= htmlspecialchars($note['body']) ?></p>
   
 
   </div>
