@@ -12,9 +12,9 @@
             <a href="/" <?= urlIs('/') ? 'aria-current="page" class="rounded-md bg-gray-950/50 px-3 py-2 text-sm font-medium text-white"' : 'class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white"' ?>>Home</a>
 
             <a href="/about" <?= urlIs('/about') ? 'aria-current="page" class="rounded-md bg-gray-950/50 px-3 py-2 text-sm font-medium text-white"' : 'class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white"' ?>>About</a>
-
-            <a href="/notes" <?= urlIs('/notes') ? 'aria-current="page" class="rounded-md bg-gray-950/50 px-3 py-2 text-sm font-medium text-white"' : 'class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white"' ?>>Notes</a>
-
+            <?php if ($_SESSION['user'] ?? false) : ?>
+              <a href="/notes" <?= urlIs('/notes') ? 'aria-current="page" class="rounded-md bg-gray-950/50 px-3 py-2 text-sm font-medium text-white"' : 'class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white"' ?>>Notes</a>
+            <?php endif; ?>
             <a href="/contact" <?= urlIs('/contact') ? 'aria-current="page" class="rounded-md bg-gray-950/50 px-3 py-2 text-sm font-medium text-white"' : 'class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white"' ?>>Contact</a>
 
           </div>
@@ -32,18 +32,21 @@
 
           <!-- Profile dropdown -->
           <el-dropdown class="relative ml-3">
-            
+
             <div>
               <?php if ($_SESSION['user'] ?? false) : ?>
-              <button class="relative flex max-w-xs items-center rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
-                <span class="absolute -inset-1.5"></span>
-                <span class="sr-only">Open user menu</span>
-                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="size-8 rounded-full outline outline-1 -outline-offset-1 outline-white/10" />
-              </button>
+                <button class="relative flex max-w-xs items-center rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
+                  <span class="absolute -inset-1.5"></span>
+                  <span class="sr-only">Open user menu</span>
+
+                  <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" class="size-8 rounded-full outline outline-1 -outline-offset-1 outline-white/10" />
+                </button>
+
               <?php else : ?>
                 <!-- <a href="/register" class="rounded-md bg-gray-950/50 px-3 py-2 text-sm font-medium text-white hover:bg-gray-950/75">Register</a> -->
-                 <a href="/register" class="text-white">Register</a>
-                <?php endif; ?>
+                <a href="/register" <?= urlIs('/register') ? 'aria-current="page" class="rounded-md bg-gray-950/50 px-3 py-2 text-sm font-medium text-white"' : 'class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white"' ?>>Register</a>
+                <a href="/login" <?= urlIs('/login') ? 'aria-current="page" class="rounded-md bg-gray-950/50 px-3 py-2 text-sm font-medium text-white"' : 'class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white"' ?>>Log in</a>
+              <?php endif; ?>
             </div>
 
             <el-menu anchor="bottom end" popover class="m-0 w-48 origin-top-right rounded-md bg-white p-0 py-1 shadow-lg outline outline-1 outline-black/5 transition [--anchor-gap:theme(spacing.2)] [transition-behavior:allow-discrete] data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in">
@@ -52,6 +55,16 @@
               <a href="#" class="block px-4 py-2 text-sm text-gray-700 focus:bg-gray-100 focus:outline-none">Sign out</a>
             </el-menu>
           </el-dropdown>
+          <?php if ($_SESSION['user'] ?? false) : ?>
+            <div class="ml-3">
+
+              <form method="POST" action="/session">
+                <input type="hidden" name="_method" value="DELETE" />
+                <button type="submit" class="rounded-md bg-gray-950/50 px-3 py-2 text-sm font-medium text-white hover:bg-gray-950/75">Logout</button>
+              </form>
+
+            </div>
+          <?php endif; ?>
         </div>
       </div>
       <div class="-mr-2 flex md:hidden">
