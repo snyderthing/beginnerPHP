@@ -1,7 +1,5 @@
 <?php
 
-use Http\Forms\LoginForm;
-use Core\Authenticator;
 use Core\Session;
 
 session_start();
