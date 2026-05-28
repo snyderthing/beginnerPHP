@@ -1,0 +1,16 @@
+{
+    "name": "gmsla/laracast",
+    "authors": [
+        {
+            "name": "snyderthing",
+            "email": "107716018+snyderthing@users.noreply.github.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "Http\\": "Http/"
+        }
+    }
+}
