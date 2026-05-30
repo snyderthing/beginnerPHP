@@ -6,11 +6,22 @@
             "email": "107716018+snyderthing@users.noreply.github.com"
         }
     ],
-    "require": {},
+    "require": {
+        "illuminate/collections": "^13.12"
+    },
     "autoload": {
         "psr-4": {
             "Core\\": "Core/",
-            "Http\\": "Http/"
+            "Http\\": "Http/",
+            "Tests\\": "tests"
+        }
+    },
+    "require-dev": {
+        "pestphp/pest": "^4.7"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
         }
     }
 }
